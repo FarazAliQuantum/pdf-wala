@@ -3,15 +3,12 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],  
-  base: process.env.VITE_BASE_PATH || "/pdf-wala"
+  plugins: [react()],
+  base: process.env.VITE_BASE_PATH || "/pdf-wala",
+
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
-  },})
+    minify: 'esbuild',
+  },
+})
